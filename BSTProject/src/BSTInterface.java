@@ -11,7 +11,6 @@ public interface BSTInterface
 
 	public boolean find(Comparable toFind);
 	// searches through the tree to determine if the object being passed is a current element in the tree if it is, return true, otherwise, return false
-
 	public boolean replace(Comparable old, Comparable toAdd);
 	// this method takes an “old” object – determines if it is currently in the tree and if it is, removes that object and adds the “toAdd” object.  If the element was successfully replaced then true is returned, if the old object did not exist then false is returned and the toAdd object is added to the BST.  Remember that you cannot just replace an element by changing its value because it may not belong at that spot in the tree after being replaced.  
 
