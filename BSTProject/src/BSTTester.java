@@ -9,12 +9,35 @@
  public class BSTTester {
    public static void main(String[] args) {
       BST tree = new BST();
-      tree.add("d");
-      tree.add("e");
-      tree.add("a");
-      tree.add("y");
-      tree.add("p");
+      tree.add("O");
+      tree.add("R");
+      tree.add("C");
+      tree.add("H");
+      tree.add("A");
+      tree.add("R");
+      tree.add("D");
 
+      tree.add("Q");
+      tree.add("U");
+      tree.add("I");
+      tree.add("N");
+      tree.add("C");
+      tree.add("E");
+
+      tree.printPreOrder();
+      tree.printInOrder();
+      tree.printPostOrder();
+
+      // System.out.println(tree.find("P")); 
+      // System.out.println(tree.find("A")); 
+      // System.out.println(tree.find("E")); 
+      // System.out.println(tree.find("o")); 
+      // System.out.println(tree.find("Y")); 
+
+      tree.delete("H");
+      tree.delete("Q");
+
+      System.out.println();
       tree.printPreOrder();
       tree.printInOrder();
       tree.printPostOrder();

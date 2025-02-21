@@ -1,5 +1,3 @@
-import java.lang.Comparable;
-
 public class BST implements BSTInterface
 {
     private TreeNode root;
@@ -114,16 +112,16 @@ public class BST implements BSTInterface
                     }
                 }
                 else{
-                    if (root.getLeft() == null){
+                    if (root.getRight() == null){
                         return false;
                     }
                     else{
-                        if (value.compareTo(root.getLeft().getValue()) == 0){
-                            handleDelete(root, root.getLeft(), true);
+                        if (value.compareTo(root.getRight().getValue()) == 0){
+                            handleDelete(root, root.getRight(), false);
                             return true;
                         }
                         else{
-                            return deleteHelper(value, root.getLeft());
+                            return deleteHelper(value, root.getRight());
                         }
                     }
                 }
@@ -131,7 +129,114 @@ public class BST implements BSTInterface
         }
     }
 
+    private boolean deleteHelper(Comparable value, TreeNode subroot){
+        if (value.compareTo(subroot.getValue()) <= 0){
+            if (subroot.getLeft() == null){
+                return false;
+            }
+            else{
+                if (value.compareTo(subroot.getLeft().getValue()) == 0){
+                    handleDelete(subroot, subroot.getLeft(), true);
+                    return true;
+                }
+                else{
+                    return deleteHelper(value, subroot.getLeft());
+                }
+            }
+        }
+        else{
+            if (subroot.getRight() == null){
+                return false;
+            }
+            else{
+                if (value.compareTo(subroot.getRight().getValue()) == 0){
+                    handleDelete(subroot, subroot.getRight(), false);
+                    return true;
+                }
+                else{
+                    return deleteHelper(value, subroot.getRight());
+                }
+            }
+        }
+    }
+
+    private void handleDelete(TreeNode parent, TreeNode child, boolean isLeft){
+        if (child.getLeft() == null){
+            if (child.getRight() == null){
+                if (isLeft){
+                    parent.setLeft(null);
+                }
+                else{
+                    parent.setRight(null);
+                }
+            }
+            else{
+                if (isLeft){
+                    parent.setLeft(child.getRight());
+                    child.setRight(null);
+                }
+                else{
+                    parent.setRight(child.getRight());
+                    child.setRight(null);
+                }
+            }
+        }
+        else{
+            if (child.getRight() == null){
+                if (isLeft){
+                    parent.setLeft(child.getLeft());
+                    child.setLeft(null);
+                }
+                else{
+                    parent.setRight(child.getLeft());
+                    child.setLeft(null);
+                }
+            }
+            else{
+                TreeNode temp = child.getLeft();
+                while (temp.getRight() != null){
+                    temp = temp.getRight();
+                }
+                temp.setRight(child.getRight());
+                if (isLeft){
+                    parent.setLeft(child.getLeft());
+                }
+                else{
+                    parent.setRight(child.getLeft());
+                }
+                child.setLeft(null);
+                child.setRight(null);
+            }
+        }
+    }
+
+    private void deleteRoot(TreeNode root){
+        if (root.getLeft() == null){
+            if (root.getRight() == null){
+                root = null;
+            }
+            else{
+                root = root.getRight();
+            }
+        }
+        else{
+            if (root.getRight() == null){
+                root = root.getLeft();
+            }
+            else{
+                TreeNode temp = root.getLeft();
+                while (temp.getRight() != null){
+                    temp = temp.getRight();
+                }
+                temp.setRight(root.getRight());
+
+                root = root.getLeft();
+            }
+        }
+    }
+
     public void printInOrder(){
+        System.out.println();
         if (root != null){
             inOrderHelper(root.getLeft());
             System.out.print(root.getValue() + " ");
