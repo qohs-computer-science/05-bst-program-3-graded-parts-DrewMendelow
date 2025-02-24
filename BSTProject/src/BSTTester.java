@@ -24,6 +24,11 @@
       tree.add("C");
       tree.add("E");
 
+      tree.add("M");
+      tree.add("T");
+      tree.add("S");
+      tree.add("Z");
+
       tree.printPreOrder();
       tree.printInOrder();
       tree.printPostOrder();
@@ -36,13 +41,46 @@
       System.out.println("O found: " + tree.find("O")); 
       System.out.println("Y found: " + tree.find("Y")); 
 
-      tree.delete("H");
       tree.delete("Q");
+      tree.delete("Z");
 
       System.out.println();
-      System.out.println("H and Q deleted.");
+      System.out.println("Q and Z deleted. (Leaves)");
       System.out.println();
-      
+
+      tree.printPreOrder();
+      tree.printInOrder();
+      tree.printPostOrder();
+
+      tree.delete("T");
+      tree.delete("I");
+      tree.delete("D");
+      tree.delete("N");
+
+      System.out.println();
+      System.out.println("T, I, D, and N deleted. (1 Child Cases)");
+      System.out.println();
+
+      tree.printPreOrder();
+      tree.printInOrder();
+      tree.printPostOrder();
+
+      tree.delete("H");
+
+      System.out.println();
+      System.out.println("H deleted. (2 Child Case)");
+      System.out.println();
+
+      tree.printPreOrder();
+      tree.printInOrder();
+      tree.printPostOrder();
+
+      tree.delete("O");
+
+      System.out.println();
+      System.out.println("O deleted. (Root Case)");
+      System.out.println();
+
       tree.printPreOrder();
       tree.printInOrder();
       tree.printPostOrder();

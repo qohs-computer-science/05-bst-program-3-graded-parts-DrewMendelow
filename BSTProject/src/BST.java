@@ -93,7 +93,7 @@ public class BST implements BSTInterface
         }
         else{
             if (value.compareTo(root.getValue()) == 0){
-                deleteRoot(root);
+                deleteRoot();
                 return true;
             }
             else{
@@ -210,7 +210,7 @@ public class BST implements BSTInterface
         }
     }
 
-    private void deleteRoot(TreeNode root){
+    private void deleteRoot(){
         if (root.getLeft() == null){
             if (root.getRight() == null){
                 root = null;
