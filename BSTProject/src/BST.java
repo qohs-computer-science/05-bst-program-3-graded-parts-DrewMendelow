@@ -288,4 +288,28 @@ public class BST implements BSTInterface
             System.out.print(subroot.getValue() + " ");
         }
     }
+
+    public int size(){
+        int count = 0;
+        if (root != null){
+            count++;
+            count += sizeHelper(root.getLeft());
+            count += sizeHelper(root.getRight());
+        }
+        return count;
+    }
+
+    public int sizeHelper(TreeNode subroot){
+        int count = 0;
+        if (subroot != null){
+            count++;
+            count += sizeHelper(subroot.getLeft());
+            count += sizeHelper(subroot.getRight());
+        }
+        return count;
+    }
+
+	public boolean isEmpty(){
+        return root == null;
+    }
 }
