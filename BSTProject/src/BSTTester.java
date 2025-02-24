@@ -28,16 +28,21 @@
       tree.printInOrder();
       tree.printPostOrder();
 
-      // System.out.println(tree.find("P")); 
-      // System.out.println(tree.find("A")); 
-      // System.out.println(tree.find("E")); 
-      // System.out.println(tree.find("o")); 
-      // System.out.println(tree.find("Y")); 
+      System.out.println();
+      System.out.println("P found: " + tree.find("P")); 
+      System.out.println("A found: " + tree.find("A")); 
+      System.out.println("E found: " + tree.find("E")); 
+      System.out.println("o found: " + tree.find("o")); 
+      System.out.println("O found: " + tree.find("O")); 
+      System.out.println("Y found: " + tree.find("Y")); 
 
       tree.delete("H");
       tree.delete("Q");
 
       System.out.println();
+      System.out.println("H and Q deleted.");
+      System.out.println();
+      
       tree.printPreOrder();
       tree.printInOrder();
       tree.printPostOrder();

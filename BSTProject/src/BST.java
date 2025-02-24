@@ -236,7 +236,7 @@ public class BST implements BSTInterface
     }
 
     public void printInOrder(){
-        System.out.println();
+        System.out.println("In order:");
         if (root != null){
             inOrderHelper(root.getLeft());
             System.out.print(root.getValue() + " ");
@@ -254,6 +254,7 @@ public class BST implements BSTInterface
     }
 
 	public void printPreOrder(){
+        System.out.println("Pre order:");
         if (root != null){
             System.out.print(root.getValue() + " ");
             preOrderHelper(root.getLeft());
@@ -271,6 +272,7 @@ public class BST implements BSTInterface
     }
 
 	public void printPostOrder(){
+        System.out.println("Post order:");
         if (root != null){
             postOrderHelper(root.getLeft());
             postOrderHelper(root.getRight());
