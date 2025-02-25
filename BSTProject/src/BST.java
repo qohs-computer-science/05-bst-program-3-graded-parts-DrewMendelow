@@ -245,7 +245,7 @@ public class BST implements BSTInterface
         }
     }
 
-    public void inOrderHelper(TreeNode subroot){
+    private void inOrderHelper(TreeNode subroot){
         if (subroot != null){
             inOrderHelper(subroot.getLeft());
             System.out.print(subroot.getValue() + " ");
@@ -263,7 +263,7 @@ public class BST implements BSTInterface
         }
     }
 
-    public void preOrderHelper(TreeNode subroot){
+    private void preOrderHelper(TreeNode subroot){
         if (subroot != null){
             System.out.print(subroot.getValue() + " ");
             preOrderHelper(subroot.getLeft());
@@ -281,7 +281,7 @@ public class BST implements BSTInterface
         }
     }
 
-    public void postOrderHelper(TreeNode subroot){
+    private void postOrderHelper(TreeNode subroot){
         if (subroot != null){
             postOrderHelper(subroot.getLeft());
             postOrderHelper(subroot.getRight());
@@ -299,7 +299,7 @@ public class BST implements BSTInterface
         return count;
     }
 
-    public int sizeHelper(TreeNode subroot){
+    private int sizeHelper(TreeNode subroot){
         int count = 0;
         if (subroot != null){
             count++;
@@ -311,5 +311,9 @@ public class BST implements BSTInterface
 
 	public boolean isEmpty(){
         return root == null;
+    }
+
+    public boolean replace(Comparable old, Comparable toAdd){
+        
     }
 }
