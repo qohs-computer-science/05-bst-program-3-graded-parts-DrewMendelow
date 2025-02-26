@@ -85,18 +85,33 @@
       tree.printInOrder();
       tree.printPostOrder();
 
-      // tree.delete("C");
-      // tree.delete("A");
-      // tree.delete("R");
-      // tree.delete("S");
-      // tree.delete("U");
-      // tree.delete("R");
-      // tree.delete("M");
-      // tree.delete("E");
-      // tree.delete("C");
+      System.out.println();
+      System.out.println("M replaced with K.");
+      tree.replace("M", "K");
+
+      System.out.println();
+      tree.printPreOrder();
+      tree.printInOrder();
+      tree.printPostOrder();
 
       System.out.println();
       System.out.println("Size: " + tree.size());
       System.out.println("Is Empty: " + tree.isEmpty());
-   }
- }
+
+      System.out.println();
+      System.out.println("Delete everything.");
+      tree.delete("C");
+      tree.delete("A");
+      tree.delete("K");
+      tree.delete("R");
+      tree.delete("S");
+      tree.delete("U");
+      tree.delete("R");
+      tree.delete("E");
+      tree.delete("C");
+      
+      System.out.println();
+      System.out.println("Size: " + tree.size());
+      System.out.println("Is Empty: " + tree.isEmpty());
+   }//end main
+ }//end class
