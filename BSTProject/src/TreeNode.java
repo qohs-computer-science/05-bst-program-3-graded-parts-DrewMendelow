@@ -1,3 +1,9 @@
+/*
+    Drew Mendelow
+    2/20/25
+    pd 7
+    Treenode class
+*/
 public class TreeNode
 {
 	private TreeNode left;

@@ -1,3 +1,9 @@
+/*
+    Drew Mendelow
+    2/20/25
+    pd 7
+	interface for the BST class
+*/
 public interface BSTInterface
 {
 	public int size();
